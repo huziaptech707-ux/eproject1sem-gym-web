@@ -1,0 +1,647 @@
+/*---- Body backgroud -----*/
+body{
+  margin: 0;
+  padding: 0;
+  background-color: #181818;   /*----- smoot dark gray ------*/
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+}
+ 
+.navbar-logo {
+    position: absolute;
+    height: 90px;
+    animation: logoFade 3s ease-in-out;
+  }
+
+  @keyframes logoFade {
+    from {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+}
+.carousel-img {
+  width: 100%;
+  height: 500px;           /*---- desktop height----- */
+  object-fit: cover;       /*----- maintain sharpness------ */
+  transition: transform 1s ease;
+}
+
+/*------- smooth zoom effect on active slide------- */ 
+.carousel-item.active img {
+  transform: scale(1.05);
+}
+
+/*---- tablet devices ----*/
+@media (max-width: 992px) {
+  .carousel-img {
+    height: 500px;
+  }
+}
+
+/* ----mobile devices ----*/
+@media (max-width: 576px) {
+  .carousel-img {
+    height: 350px;
+  }
+}
+/* ----mobile devices---- */
+@media (max-width: 480px) {
+  .carousel-img {
+    height: 200px;
+  }
+}
+/*----- optional overlay for better text visibility ------*/
+.carousel-inner::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.2); /*---- subtle dark overlay----- */
+  z-index: 1;
+}
+.card{
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+}
+/*------- trainer card base-------- */
+.trainer-card {
+  border-radius: 20px;
+  overflow: hidden;
+  border: none;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.trainer-card img {
+  height: 260px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.trainer-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 45px rgba(220,53,69,0.6);
+}
+
+.trainer-card:hover img {
+  transform: scale(1.1);
+}
+
+.trainer-card .card-title {
+  font-weight: 700;
+  color: #dc3545;
+}
+
+.trainer-card .card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ----- desktop and laptop (≥1200px)----- */
+@media (min-width: 1200px) {
+  .trainer-card img {
+    height: 280px;
+  }
+}
+
+/*------ laptop / small desktop (992px – 1199px) ----- */
+@media (max-width: 1199px) {
+  .trainer-card img {
+    height: 260px;
+  }
+}
+
+/*------ tablet (768px – 991px) -------*/
+@media (max-width: 991px) {
+  .trainer-card {
+    margin: auto;
+  }
+
+  .trainer-card img {
+    height: 240px;
+  }
+}
+
+/*----- mobile (≤767px) -------*/
+@media (max-width: 767px) {
+  .trainer-card img {
+    height: 220px;
+  }
+
+  .trainer-card .card-text {
+    font-size: 0.9rem;
+  }
+
+  .trainer-card:hover {
+    transform: none;
+  }
+}
+/*----- modal base ------*/
+.modal-content {
+  background: #0f0f0f;
+  color: #fff;
+  border-radius: 18px;
+  border: none;
+  box-shadow: 0 25px 60px rgba(220, 53, 69, 0.6);
+}
+
+/*----- header-------*/
+.modal-header {
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 16px 20px;
+}
+
+.modal-title {
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #dc3545;
+}
+
+/*----body-----*/
+.modal-body {
+  padding: 25px;
+  text-align: center;
+}
+
+/*------ image------ */
+.modal-body img {
+  max-width: 320px;
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+/*----- text------ */
+.modal-body p {
+  background: transparent !important;
+  color: #dcdcdc;
+  font-size: 16px;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/*----footer------*/
+.modal-footer {
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding: 15px 20px;
+}
+
+/*------ button-----*/
+.modal-footer .btn-danger {
+  padding: 8px 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/*---animation------*/
+.modal.fade .modal-dialog {
+  transform: scale(0.8);
+  transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+  transform: scale(1);
+}
+
+/*------responsive break------ */
+
+@media (max-width: 992px) {
+  .modal-body img {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 12px;
+  }
+
+  .modal-body img {
+    max-width: 100%;
+  }
+
+  .modal-body p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    border-radius: 12px;
+  }
+
+  .modal-title {
+    font-size: 18px;
+  }
+
+  .modal-body {
+    padding: 18px;
+  }
+}
+/*---poses by card styleing----*/
+.pose-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.pose-card img {
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+/*-----hover animation------- */
+.pose-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(255,0,0,0.4);
+}
+
+.pose-card:hover img {
+  transform: scale(1.1);
+}
+
+.pose-card .card-body {
+  background: #111;
+  color: #fff;
+}
+
+.pose-card .card-title {
+  font-weight: bold;
+  color: #ffc107;
+}
+
+.pose-card .btn {
+  border-radius: 30px;
+  padding: 8px 22px;
+}
+
+/*----responsive text------*/
+@media (max-width: 768px) {
+  .pose-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .pose-card img {
+    height: 180px;
+  }
+}
+/*----- weight training cards animation-----*/
+.pose-card {
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+.pose-card img {
+  transition: transform 0.4s ease;
+}
+
+.pose-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(255,0,0,0.35);
+}
+
+.pose-card:hover img {
+  transform: scale(1.1);
+}
+
+/*----button hover------*/
+.pose-card .btn {
+  transition: all 0.3s ease;
+}
+
+.pose-card .btn:hover {
+  background-color: #000;
+  border-color: red;
+}
+
+/*----- modal animation------*/
+.modal.fade .modal-dialog {
+  transform: scale(0.7);
+  transition: transform 0.4s ease;
+}
+
+.modal.show .modal-dialog {
+  transform: scale(1);
+}
+/*----- main benefit card-----*/
+.benefit-main-card{
+  background: #0f0f0f;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7);
+  transition: 0.5s ease;
+  height: 100%;
+}
+
+/*----- image------*/
+.benefit-main-card img{
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+/*----- contect-----*/
+.benefit-content{
+  padding: 25px;
+  color: #fff;
+}
+
+.benefit-content h4{
+  color: #ff2c2c;
+  font-weight: 800;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.benefit-content ul{
+  padding-left: 18px;
+}
+
+.benefit-content ul li{
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #ddd;
+}
+
+/*----- hover effect----- */
+.benefit-main-card:hover{
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 25px 55px rgba(255,0,0,0.35);
+}
+
+.benefit-main-card:hover img{
+  transform: scale(1.12);
+}
+
+/*---responsive---*/
+@media(max-width: 768px){
+  .benefit-main-card img{
+      height: 210px;
+  }
+}
+
+@media(max-width: 576px){
+  .benefit-main-card img{
+      height: 190px;
+  }
+}
+.workout-title{
+  color:#ff2c2c;
+  font-weight:900;
+  margin-bottom:40px;
+  letter-spacing:1px;
+}
+
+.workout-table table{
+  background:#0e0e0e;
+  color:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.7);
+}
+
+.workout-table th{
+  background:#ff2c2c;
+  color:#fff;
+  text-transform:uppercase;
+  font-size:14px;
+}
+
+.workout-table td{
+  padding:16px;
+  border-bottom:1px solid #222;
+}
+
+.weight{ color:#ff5252; font-weight:700; }
+.cardio{ color:#00e5ff; font-weight:700; }
+.yoga{ color:#7CFF6B; font-weight:700; }
+
+.rest-day{
+  background:#111;
+  text-align:center;
+  font-weight:800;
+  color:#aaa;
+}
+
+/*----hover effect----*/
+.workout-table tbody tr:hover{
+  background:#1a1a1a;
+  transform:scale(1.01);
+  transition:.3s;
+}
+
+/* -----animation---- */
+.fade-row{
+  animation:fadeUp .8s ease forwards;
+}
+
+@keyframes fadeUp{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/*----- mobile card look----*/
+@media(max-width:768px){
+  table, thead, tbody, th, td, tr{
+    display:block;
+  }
+
+  thead{ display:none; }
+
+  tr{
+    margin-bottom:20px;
+    background:#111;
+    border-radius:12px;
+    padding:15px;
+  }
+
+  td{
+    border:none;
+    padding:8px 0;
+  }
+}
+.mind-relax{
+  background:#0d0d0d;
+}
+
+.relax-card{
+  background:#141414;
+  border-radius:16px;
+  overflow:hidden;
+  transition:0.4s;
+  box-shadow:0 10px 30px rgba(0,0,0,0.6);
+}
+
+.relax-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 18px 45px rgba(220,53,69,0.5);
+}
+
+.relax-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.relax-content{
+  padding:20px;
+}
+
+.relax-content h5{
+  color:#dc3545;
+  font-weight:700;
+}
+
+.relax-content p{
+  color:#ccc;
+  font-size:14px;
+}
+ /*-----golbal-----*/
+body.dark-theme {
+  background-color: #0f0f0f;
+  color: #f1f1f1;
+  font-family: 'Segoe UI', sans-serif;
+}
+/*----hero------*/
+.about-hero {
+  background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)),
+              url("../assets/aboutus2.jpg") center/cover;
+  padding: 100px 20px;
+}
+
+.about-hero h1 {
+  color: #ffc107;
+  font-size: 3rem;
+}
+
+/*-----animation-----*/
+.animate-fade {
+  animation: fadeIn 1.5s ease;
+}
+
+.animate-slide {
+  animation: slideUp 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes slideUp {
+  from {transform: translateY(40px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+/*----about image-----*/
+.about-img {
+  box-shadow: 0 0 20px rgba(255,193,7,.3);
+}
+
+/*-----card------*/
+.about-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 20px;
+  transition: .4s;
+  height: 100%;
+}
+
+.about-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.about-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(255,0,0,.4);
+}
+
+/*---stats-----*/
+.stats-section {
+  background: #111;
+  padding: 60px 0;
+}
+
+.stats-section h2 {
+  color: #dc3545;
+  font-weight: bold;
+}
+
+/*----responsive-----*/
+@media (max-width: 768px) {
+  .about-hero h1 {
+    font-size: 2.2rem;
+  }
+}
+/* CONTACT US THEME – HOME STYLE */
+.contact-section {
+  background-color: #111;
+}
+
+.contact-card {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(220,53,69,0.15);
+  animation: fadeUp 0.8s ease;
+}
+
+.contact-card input,
+.contact-card textarea {
+  background: #111;
+  border: 1px solid #333;
+  color: #fff;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+  border-color: #dc3545;
+  box-shadow: none;
+}
+
+.contact-card::placeholder {
+  color: #aaa;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 20px;
+  }
+}
+
+
+
+
